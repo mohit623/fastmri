@@ -22,7 +22,7 @@ Under Project are several important files and directories. We mention some relev
 
 experiments: This is where the run script for each model resides under a sub-directory named for the model. This is also where reconstructed images are generated.
 
-data: This is where the data downloaded from the fastMRI project is placed and unzipped. Once unzipped, it creates 3 directories - singlecoil_train, singlecoil_val and singlecoil_test (rename this one to remove the v2)
+data: This is where the data downloaded from the fastMRI project is placed and unzipped. Once unzipped, it creates 3 directories - singlecoil_train, singlecoil_val and singlecoil_test (rename this one to remove the v2). This folder was not added due to space limitation on github.
 
 results: This has sub-directories for each model under which we have checkpoints files for best epochs.
 

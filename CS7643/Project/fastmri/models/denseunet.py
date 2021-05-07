@@ -1,6 +1,10 @@
 import torch
 from torch import nn
 
+"""
+Below model is inspired and adapted from:
+https://github.com/veritas9872/fastMRI-kspace/blob/master/models/dense_unet.py
+"""
 
 class ChannelAttention(nn.Module):
     def __init__(self, num_chans, reduction=16):

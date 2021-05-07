@@ -131,7 +131,7 @@ class RecurrentConvBlock(nn.Module):
         self.t = t
 
         # This doesn't quite work in the experiments. Switching to alternate implementation
-        # based on figures 4 and 5 of the paper. Also, decided to use InstanceNorm2d, 
+        # based on figures 4 and 5 of the paper. Also, decided to use InstanceNorm2d,
         # LeakyReLU and Dropout from the Unet implementation.
 
         # self.conv = nn.Sequential(
@@ -154,10 +154,10 @@ class RecurrentConvBlock(nn.Module):
             nn.Dropout2d(drop_prob),
         )
 
-    def forward(self, image: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Args:
-            image: Input 4D tensor of shape `(N, in_chans, H, W)`.
+            x: Input 4D tensor of shape `(N, in_chans, H, W)`.
 
         Returns:
             Output tensor of shape `(N, out_chans, H, W)`.
@@ -175,19 +175,19 @@ class RecurrentConvBlock(nn.Module):
 
         # for i in range(self.t):
         #     if i == 0:
-        #         image1 = self.conv(image)
+        #         x1 = self.conv(x)
             
-        #     image1 = self.rcl(image + image1)
+        #     x1 = self.rcl(x + x)
 
-        # return image1
+        # return x1
 
         for i in range(self.t):
             if i == 0:
-                image = self.conv(image)
+                x = self.conv(x)
             
-            output = self.rcl(image + image)
+            x1 = self.rcl(x + x)
 
-        return output
+        return x1
 
 
 class TransposeConvBlock(nn.Module):

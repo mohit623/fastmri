@@ -16,7 +16,7 @@ Using:
 
 ### Project Structure
 
-The top level directory of our code is named CS7643. It contains the Project directory and this README.md file.
+The top level directory of our code is named fastmri under which we have CS7643 folder. CS7643 contains the Project directory and this README.md file.
 
 Under Project are several important files and directories. We mention some relevant ones here.
 

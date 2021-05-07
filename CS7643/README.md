@@ -52,6 +52,7 @@ pip3.8 install -e dev-requirements.txt <br />
 We requested the fastMRI from the [NYU fastMRI](https://fastmri.med.nyu.edu) website and Once approval is received, follow directions in the email to download single-coil knee dataset using curl to store the data in the google cloud bucket(using gsutils) or store them directly on the server. We have used the singlecoil - train, validation and test data set.
 
 On the environment<br />
+mkdir $PROJECT_BASE/CS7643/Project/data<br/>
 cd $PROJECT_BASE/CS7643/Project/data<br />
 curl -C &lt;URL&gt; --output knee_singlecoil_train.tar.gz <br />
 curl -C &lt;URL&gt; --output knee_singlecoil_val.tar.gz <br />
